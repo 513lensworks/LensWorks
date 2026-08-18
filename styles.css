@@ -38,3 +38,18 @@
 .quick-pricing .promo-price{padding-left:30px;border-left:2px solid var(--red2)}
 .quick-pricing .promo-price strong{color:var(--red2)}
 @media(max-width:600px){.quick-pricing{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}.quick-pricing .promo-price{grid-column:1/-1;padding:12px 16px;background:rgba(225,29,46,.08);border-left:3px solid var(--red2);border-radius:0 10px 10px 0}}
+
+/* Keep the complete header wordmark together on one line. */
+.brand{
+  flex-direction:row;
+  align-items:baseline;
+  white-space:nowrap;
+}
+
+.brand-513,
+.brand-name{
+  font-size:1.45rem;
+  font-weight:900;
+  letter-spacing:.02em;
+  line-height:1;
+}
