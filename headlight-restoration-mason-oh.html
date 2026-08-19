@@ -42,7 +42,7 @@
     <nav aria-label="Main navigation">
       <a href="index.html#services">Services</a>
       <a href="index.html#pricing">Pricing</a>
-      <a href="index.html#results">Results</a>
+      <a href="#results">Results</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -98,6 +98,76 @@
       </ol>
     </section>
 
+
+    <section id="results" class="section results-section">
+      <div class="section-heading centered">
+        <p class="eyebrow">Real Results</p>
+        <h2>Headlights we've restored.</h2>
+        <p>Real before-and-after results from 513 LensWorks customers.</p>
+      </div>
+
+      <div class="results-carousel-wrap">
+        <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous restoration">&#10094;</button>
+
+        <div class="results-carousel" id="results-carousel">
+          <article class="result-card result-slide">
+            <div class="result-title"><div><span class="result-kicker">Headlight Restoration</span><h3>2005 Toyota Land Cruiser</h3></div><span class="result-location">Cincinnati, OH</span></div>
+            <div class="before-after-grid">
+              <figure class="result-photo"><div class="photo-wrap"><img src="2005-landcruiser-before.jpeg" alt="Before restoration - cloudy and oxidized 2005 Toyota Land Cruiser headlight" loading="lazy" /><span class="photo-label before-label">Before</span></div></figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="2005-landcruiser-after.jpeg" alt="After restoration - clear 2005 Toyota Land Cruiser headlight restored by 513 LensWorks" loading="lazy" /><span class="photo-label after-label">After</span></div></figure>
+            </div>
+            <p class="result-caption">Oxidation removed, clarity restored, and finished with UV protection.</p>
+          </article>
+
+          <article class="result-card result-slide">
+            <div class="result-title"><div><span class="result-kicker">Headlight Restoration</span><h3>Lexus</h3></div><span class="result-location">Cincinnati, OH</span></div>
+            <div class="before-after-grid">
+              <figure class="result-photo"><div class="photo-wrap"><img src="Lexus_Before.JPG" alt="Before Lexus headlight restoration" loading="lazy" /><span class="photo-label before-label">Before</span></div></figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Lexus_After.JPG" alt="After Lexus headlight restoration" loading="lazy" /><span class="photo-label after-label">After</span></div></figure>
+            </div>
+            <p class="result-caption">Cloudiness reduced and clarity restored with UV protection.</p>
+          </article>
+
+          <article class="result-card result-slide">
+            <div class="result-title"><div><span class="result-kicker">Headlight Restoration</span><h3>Ford</h3></div><span class="result-location">Cincinnati, OH</span></div>
+            <div class="before-after-grid">
+              <figure class="result-photo"><div class="photo-wrap"><img src="Ford_Before.JPG" alt="Before Ford headlight restoration" loading="lazy" /><span class="photo-label before-label">Before</span></div></figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Ford_After.JPG" alt="After Ford headlight restoration" loading="lazy" /><span class="photo-label after-label">After</span></div></figure>
+            </div>
+            <p class="result-caption">Heavy haze removed for a cleaner, clearer appearance.</p>
+          </article>
+
+          <article class="result-card result-slide">
+            <div class="result-title"><div><span class="result-kicker">Headlight Restoration</span><h3>2009 Audi TT</h3></div><span class="result-location">Cincinnati, OH</span></div>
+            <div class="before-after-grid">
+              <figure class="result-photo"><div class="photo-wrap"><img src="Audi_TT_Before.jpeg" alt="Before restoration - cloudy and oxidized 2009 Audi TT headlight" loading="lazy" /><span class="photo-label before-label">Before</span></div></figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Audi_TT_After.jpeg" alt="After restoration - clearer 2009 Audi TT headlight restored by 513 LensWorks" loading="lazy" /><span class="photo-label after-label">After</span></div></figure>
+            </div>
+            <p class="result-caption">Failed coating and oxidation removed, then finished with UV protection.</p>
+          </article>
+
+          <article class="result-card result-slide">
+            <div class="result-title"><div><span class="result-kicker">Headlight Restoration</span><h3>Toyota Camry</h3></div><span class="result-location">Cincinnati, OH</span></div>
+            <div class="before-after-grid">
+              <figure class="result-photo"><div class="photo-wrap"><img src="Toyota_Camry_Before.JPG" alt="Before Toyota Camry headlight restoration" loading="lazy" /><span class="photo-label before-label">Before</span></div></figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Toyota_Camry_After.JPG" alt="After Toyota Camry headlight restoration" loading="lazy" /><span class="photo-label after-label">After</span></div></figure>
+            </div>
+            <p class="result-caption">Heavy oxidation removed, clarity restored, and finished with UV protection.</p>
+          </article>
+        </div>
+
+        <button class="carousel-arrow carousel-next" type="button" aria-label="Next restoration">&#10095;</button>
+      </div>
+
+      <div class="carousel-dots" aria-label="Restoration slide navigation">
+        <button class="carousel-dot active" type="button" aria-label="Show Land Cruiser restoration"></button>
+        <button class="carousel-dot" type="button" aria-label="Show Lexus restoration"></button>
+        <button class="carousel-dot" type="button" aria-label="Show Ford restoration"></button>
+        <button class="carousel-dot" type="button" aria-label="Show Audi TT restoration"></button>
+        <button class="carousel-dot" type="button" aria-label="Show Toyota Camry restoration"></button>
+      </div>
+    </section>
+
     <section id="faq" class="section local-faq">
       <div class="section-heading">
         <p class="eyebrow">Mason headlight restoration FAQ</p>
@@ -128,6 +198,35 @@
     <div><strong>513 LensWorks</strong><span>Professional Headlight Restoration</span><a href="index.html">Home</a></div>
     <p>© <span id="year"></span> 513 LensWorks · Mason & Cincinnati, Ohio</p>
   </footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const carousel = document.getElementById("results-carousel");
+    const slides = Array.from(carousel.querySelectorAll(".result-slide"));
+    const prevButton = document.querySelector(".carousel-prev");
+    const nextButton = document.querySelector(".carousel-next");
+    const dots = Array.from(document.querySelectorAll(".carousel-dot"));
+    let currentSlide = 0;
+
+    const showSlide = index => {
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+      dots.forEach((dot, i) => dot.classList.toggle("active", i === currentSlide));
+    };
+
+    prevButton.addEventListener("click", () => showSlide(currentSlide - 1));
+    nextButton.addEventListener("click", () => showSlide(currentSlide + 1));
+    dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
+
+    carousel.addEventListener("scroll", () => {
+      const slideWidth = carousel.clientWidth;
+      if (!slideWidth) return;
+      const index = Math.round(carousel.scrollLeft / slideWidth);
+      if (index !== currentSlide && index >= 0 && index < slides.length) {
+        currentSlide = index;
+        dots.forEach((dot, i) => dot.classList.toggle("active", i === currentSlide));
+      }
+    }, { passive: true });
+  </script>
 </body>
 </html>
