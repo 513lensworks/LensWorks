@@ -53,3 +53,13 @@
   letter-spacing:.02em;
   line-height:1;
 }
+
+
+/* Local service landing pages */
+.local-hero{min-height:610px}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.faq-grid .card{min-height:0}
+.faq-grid .card h3{margin-bottom:10px}
+footer a{color:#d8d8dc;margin-top:4px}
+footer a:hover{color:var(--red2)}
+@media(max-width:700px){.faq-grid{grid-template-columns:1fr}}
