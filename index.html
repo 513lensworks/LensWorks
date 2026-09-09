@@ -87,47 +87,102 @@
       <div class="section-heading">
         <p class="eyebrow">What we do</p>
         <h2>Mobile automotive appearance & lighting services.</h2>
-        <p>We come to you in Mason, Cincinnati and surrounding areas for headlight restoration, interior detailing and standard automotive bulb replacement.</p>
+        <p>We come to you in Mason, Cincinnati and surrounding areas for headlight restoration, interior detailing and standard automotive bulb replacement. Click a service to see more.</p>
       </div>
-      <div class="cards">
-        <article class="card"><div class="icon">01</div><h3>Headlight Restoration</h3><p>Multi-stage restoration removes exterior oxidation, yellowing and failed surface material, then finishes the lens with UV protection.</p></article>
-        <article class="card"><div class="icon">02</div><h3>Interior Detailing</h3><p>Choose from three interior packages ranging from a complete refresh to disinfection, stain treatment and pet-hair removal.</p></article>
-        <article class="card"><div class="icon">03</div><h3>Bulb Replacement</h3><p>Replacement of accessible standard automotive bulbs. Pricing varies by vehicle and access. LED replacements are not offered.</p></article>
-        <article class="card"><div class="icon">04</div><h3>Mobile Service</h3><p>No shop visit needed. We bring our services to your home or workplace when conditions allow.</p></article>
+      <div class="cards service-cards">
+        <button type="button" class="card service-card service-card-headlight active" data-service="headlight" aria-pressed="true">
+          <div class="service-card-top"><div class="icon">01</div><span class="service-symbol">✦</span></div>
+          <h3>Headlight Restoration</h3>
+          <p>Restore clarity to cloudy, yellowed and oxidized lenses with UV protection.</p>
+          <span class="service-link">View details <b>→</b></span>
+        </button>
+        <button type="button" class="card service-card service-card-interior" data-service="interior" aria-pressed="false">
+          <div class="service-card-top"><div class="icon">02</div><span class="service-symbol">◆</span></div>
+          <h3>Interior Detailing</h3>
+          <p>Three levels of interior care, from a complete refresh to a deeper clean.</p>
+          <span class="service-link">View details <b>→</b></span>
+        </button>
+        <button type="button" class="card service-card service-card-bulb" data-service="bulb" aria-pressed="false">
+          <div class="service-card-top"><div class="icon">03</div><span class="service-symbol">◉</span></div>
+          <h3>Bulb Replacement</h3>
+          <p>Convenient replacement of accessible standard automotive bulbs. No LEDs.</p>
+          <span class="service-link">View details <b>→</b></span>
+        </button>
+        <button type="button" class="card service-card service-card-mobile" data-service="mobile" aria-pressed="false">
+          <div class="service-card-top"><div class="icon">04</div><span class="service-symbol">⌁</span></div>
+          <h3>Mobile Service</h3>
+          <p>Skip the shop visit. We bring the service to your home or workplace.</p>
+          <span class="service-link">View details <b>→</b></span>
+        </button>
+      </div>
+
+      <div class="service-spotlight" id="service-spotlight" aria-live="polite">
+        <div class="spotlight-copy">
+          <p class="eyebrow" id="spotlight-kicker">Our specialty</p>
+          <h3 id="spotlight-title">Headlight Restoration</h3>
+          <p id="spotlight-text">Our multi-stage process removes exterior oxidation, yellowing and failed surface material, then refines the lens and finishes it with UV protection.</p>
+          <div class="spotlight-tags" id="spotlight-tags"><span>Multi-stage restoration</span><span>UV protection</span><span>Mobile service</span></div>
+        </div>
+        <a class="button" id="spotlight-action" href="#pricing-headlights">See Headlight Pricing</a>
       </div>
     </section>
 
     <section id="pricing" class="section pricing-section">
       <div class="section-heading centered">
         <p class="eyebrow">Service pricing</p>
-        <h2>Choose the service that fits your vehicle.</h2>
-        <p>Interior packages are designed to make pricing straightforward. Extra-heavy conditions may require a custom quote.</p>
+        <h2>Simple pricing, organized by service.</h2>
+        <p>Choose a category below. Final service approval is based on vehicle condition and inspection.</p>
       </div>
-      <div class="price-grid">
-        <article class="price-card">
-          <p>One Headlight</p><div class="price">$70</div><span>Professional restoration + UV protection</span>
-          <a class="button button-ghost" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20restoring%20one%20headlight.%20Are%20you%20available%3F">Book One</a>
-        </article>
-        <article class="price-card featured">
-          <div class="badge">Best Value · Save $25</div><p>Both Headlights</p><div class="price">$115</div><span>Professional restoration + UV protection</span>
-          <a class="button" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20getting%20both%20headlights%20restored.%20Are%20you%20available%3F">Book Both</a>
-        </article>
-        <article class="price-card">
-          <p>Basic Interior</p><div class="price">$150</div><span>Vacuum, interior wipe-down, cup holders & crevices, interior glass and general surface cleaning</span>
-          <a class="button button-ghost" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20the%20%24150%20Basic%20Interior%20Detail.%20Are%20you%20available%3F">Book Basic</a>
-        </article>
-        <article class="price-card featured">
-          <div class="badge">Added Disinfection</div><p>Interior + Disinfection</p><div class="price">$225</div><span>Everything in Basic, plus disinfection of high-touch interior surfaces and a more detailed interior clean</span>
-          <a class="button" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20the%20%24225%20Interior%20Detail%20with%20Disinfection.%20Are%20you%20available%3F">Book Disinfection</a>
-        </article>
-        <article class="price-card">
-          <p>Deep Clean Interior</p><div class="price">$300</div><span>Everything in the $225 package, plus stain treatment and pet-hair removal for a deeper interior reset</span>
-          <a class="button button-ghost" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20the%20%24300%20Deep%20Clean%20Interior%20Detail.%20Are%20you%20available%3F">Book Deep Clean</a>
-        </article>
-        <article class="price-card">
-          <p>Bulb Replacement</p><div class="price">$15.99–$50</div><span>Standard non-LED automotive bulb replacement. Final price depends on vehicle, bulb location and access.</span>
-          <a class="button button-ghost" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20a%20non-LED%20bulb%20replacement.%20My%20vehicle%20is%3A%20">Ask About a Bulb</a>
-        </article>
+
+      <div class="pricing-category" id="pricing-headlights">
+        <div class="pricing-category-heading">
+          <div><span class="category-number">01</span><div><p class="eyebrow">Lens care</p><h3>Headlight Restoration</h3></div></div>
+          <p>Professional restoration for exterior haze, oxidation and yellowing.</p>
+        </div>
+        <div class="price-grid price-grid-two">
+          <article class="price-card">
+            <p>One Headlight</p><div class="price">$70</div><span>Professional restoration + UV protection</span>
+            <a class="button button-ghost" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20restoring%20one%20headlight.%20Are%20you%20available%3F">Book One</a>
+          </article>
+          <article class="price-card featured">
+            <div class="badge">Best Value · Save $25</div><p>Both Headlights</p><div class="price">$115</div><span>Professional restoration + UV protection</span>
+            <a class="button" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20getting%20both%20headlights%20restored.%20Are%20you%20available%3F">Book Both</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="pricing-category" id="pricing-interior">
+        <div class="pricing-category-heading">
+          <div><span class="category-number">02</span><div><p class="eyebrow">Interior care</p><h3>Interior Detailing</h3></div></div>
+          <p>Three levels of service depending on how much attention your interior needs.</p>
+        </div>
+        <div class="price-grid price-grid-three">
+          <article class="price-card">
+            <p>Basic Interior</p><div class="price">$150</div><span>Vacuum, interior wipe-down, cup holders & crevices, interior glass and general surface cleaning</span>
+            <a class="button button-ghost" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20the%20%24150%20Basic%20Interior%20Detail.%20Are%20you%20available%3F">Book Basic</a>
+          </article>
+          <article class="price-card featured">
+            <div class="badge">Added Disinfection</div><p>Interior + Disinfection</p><div class="price">$225</div><span>Everything in Basic, plus disinfection of high-touch interior surfaces and a more detailed interior clean</span>
+            <a class="button" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20the%20%24225%20Interior%20Detail%20with%20Disinfection.%20Are%20you%20available%3F">Book Disinfection</a>
+          </article>
+          <article class="price-card">
+            <p>Deep Clean Interior</p><div class="price">$300</div><span>Everything in the $225 package, plus stain treatment and pet-hair removal for a deeper interior reset</span>
+            <a class="button button-ghost" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20the%20%24300%20Deep%20Clean%20Interior%20Detail.%20Are%20you%20available%3F">Book Deep Clean</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="pricing-category" id="pricing-bulbs">
+        <div class="pricing-category-heading">
+          <div><span class="category-number">03</span><div><p class="eyebrow">Lighting service</p><h3>Bulb Replacement</h3></div></div>
+          <p>Standard non-LED bulb replacement. Price depends on the vehicle, bulb location and accessibility.</p>
+        </div>
+        <div class="price-grid price-grid-one">
+          <article class="price-card bulb-price-card">
+            <div><p>Standard Bulb Replacement</p><div class="price">$15.99–$50</div><span>Non-LED automotive bulbs only. Final price is confirmed after reviewing the vehicle and access required.</span></div>
+            <a class="button button-ghost" href="sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20a%20non-LED%20bulb%20replacement.%20My%20vehicle%20is%3A%20">Ask About a Bulb</a>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -158,125 +213,48 @@
         <div class="results-carousel" id="results-carousel">
           <article class="result-card result-slide">
             <div class="result-title">
-              <div>
-                <span class="result-kicker">Headlight Restoration</span>
-                <h3>2005 Toyota Land Cruiser</h3>
-              </div>
+              <div><span class="result-kicker">Headlight Restoration</span><h3>2005 Toyota Land Cruiser</h3></div>
               <span class="result-location">Cincinnati, OH</span>
             </div>
             <div class="before-after-grid">
-              <figure class="result-photo">
-                <div class="photo-wrap">
-                  <img src="2005-landcruiser-before.jpeg" alt="Before restoration - cloudy and oxidized 2005 Toyota Land Cruiser headlight" loading="lazy" />
-                  <span class="photo-label before-label">Before</span>
-                </div>
-              </figure>
-              <figure class="result-photo">
-                <div class="photo-wrap">
-                  <img src="2005-landcruiser-after.jpeg" alt="After restoration - clear 2005 Toyota Land Cruiser headlight restored by 513 LENSWORKS LLC" loading="lazy" />
-                  <span class="photo-label after-label">After</span>
-                </div>
-              </figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="2005-landcruiser-before.jpeg" alt="Before restoration - cloudy and oxidized 2005 Toyota Land Cruiser headlight" loading="lazy" /><span class="photo-label before-label">Before</span></div></figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="2005-landcruiser-after.jpeg" alt="After restoration - clear 2005 Toyota Land Cruiser headlight restored by 513 LENSWORKS LLC" loading="lazy" /><span class="photo-label after-label">After</span></div></figure>
             </div>
             <p class="result-caption">Oxidation removed, clarity restored, and finished with UV protection.</p>
           </article>
 
           <article class="result-card result-slide">
-            <div class="result-title">
-              <div>
-                <span class="result-kicker">Headlight Restoration</span>
-                <h3>Lexus</h3>
-              </div>
-              <span class="result-location">Cincinnati, OH</span>
-            </div>
+            <div class="result-title"><div><span class="result-kicker">Headlight Restoration</span><h3>Lexus</h3></div><span class="result-location">Cincinnati, OH</span></div>
             <div class="before-after-grid">
-              <figure class="result-photo">
-                <div class="photo-wrap">
-                  <img src="Lexus_Before.JPG" alt="Before Lexus headlight restoration" loading="lazy" />
-                  <span class="photo-label before-label">Before</span>
-                </div>
-              </figure>
-              <figure class="result-photo">
-                <div class="photo-wrap">
-                  <img src="Lexus_After.JPG" alt="After Lexus headlight restoration" loading="lazy" />
-                  <span class="photo-label after-label">After</span>
-                </div>
-              </figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Lexus_Before.JPG" alt="Before Lexus headlight restoration" loading="lazy" /><span class="photo-label before-label">Before</span></div></figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Lexus_After.JPG" alt="After Lexus headlight restoration" loading="lazy" /><span class="photo-label after-label">After</span></div></figure>
             </div>
             <p class="result-caption">Cloudiness reduced and clarity restored with UV protection.</p>
           </article>
 
           <article class="result-card result-slide">
-            <div class="result-title">
-              <div>
-                <span class="result-kicker">Headlight Restoration</span>
-                <h3>Ford</h3>
-              </div>
-              <span class="result-location">Cincinnati, OH</span>
-            </div>
+            <div class="result-title"><div><span class="result-kicker">Headlight Restoration</span><h3>Ford</h3></div><span class="result-location">Cincinnati, OH</span></div>
             <div class="before-after-grid">
-              <figure class="result-photo">
-                <div class="photo-wrap">
-                  <img src="Ford_Before.JPG" alt="Before Ford headlight restoration" loading="lazy" />
-                  <span class="photo-label before-label">Before</span>
-                </div>
-              </figure>
-              <figure class="result-photo">
-                <div class="photo-wrap">
-                  <img src="Ford_After.JPG" alt="After Ford headlight restoration" loading="lazy" />
-                  <span class="photo-label after-label">After</span>
-                </div>
-              </figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Ford_Before.JPG" alt="Before Ford headlight restoration" loading="lazy" /><span class="photo-label before-label">Before</span></div></figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Ford_After.JPG" alt="After Ford headlight restoration" loading="lazy" /><span class="photo-label after-label">After</span></div></figure>
             </div>
             <p class="result-caption">Heavy haze removed for a cleaner, clearer appearance.</p>
           </article>
 
           <article class="result-card result-slide">
-            <div class="result-title">
-              <div>
-                <span class="result-kicker">Headlight Restoration</span>
-                <h3>2009 Audi TT</h3>
-              </div>
-              <span class="result-location">Cincinnati, OH</span>
-            </div>
+            <div class="result-title"><div><span class="result-kicker">Headlight Restoration</span><h3>2009 Audi TT</h3></div><span class="result-location">Cincinnati, OH</span></div>
             <div class="before-after-grid">
-              <figure class="result-photo">
-                <div class="photo-wrap">
-                  <img src="Audi_TT_Before.jpeg" alt="Before restoration - cloudy and oxidized 2009 Audi TT headlight" loading="lazy" />
-                  <span class="photo-label before-label">Before</span>
-                </div>
-              </figure>
-              <figure class="result-photo">
-                <div class="photo-wrap">
-                  <img src="Audi_TT_After.jpeg" alt="After restoration - clearer 2009 Audi TT headlight restored by 513 LENSWORKS LLC" loading="lazy" />
-                  <span class="photo-label after-label">After</span>
-                </div>
-              </figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Audi_TT_Before.jpeg" alt="Before restoration - cloudy and oxidized 2009 Audi TT headlight" loading="lazy" /><span class="photo-label before-label">Before</span></div></figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Audi_TT_After.jpeg" alt="After restoration - clearer 2009 Audi TT headlight restored by 513 LENSWORKS LLC" loading="lazy" /><span class="photo-label after-label">After</span></div></figure>
             </div>
             <p class="result-caption">Failed coating and oxidation removed, then finished with UV protection.</p>
           </article>
 
           <article class="result-card result-slide">
-            <div class="result-title">
-              <div>
-                <span class="result-kicker">Headlight Restoration</span>
-                <h3>Toyota Camry</h3>
-              </div>
-              <span class="result-location">Cincinnati, OH</span>
-            </div>
+            <div class="result-title"><div><span class="result-kicker">Headlight Restoration</span><h3>Toyota Camry</h3></div><span class="result-location">Cincinnati, OH</span></div>
             <div class="before-after-grid">
-              <figure class="result-photo">
-                <div class="photo-wrap">
-                  <img src="Toyota_Camry_Before.JPG" alt="Before Toyota Camry headlight restoration" loading="lazy" />
-                  <span class="photo-label before-label">Before</span>
-                </div>
-              </figure>
-              <figure class="result-photo">
-                <div class="photo-wrap">
-                  <img src="Toyota_Camry_After.JPG" alt="After Toyota Camry headlight restoration" loading="lazy" />
-                  <span class="photo-label after-label">After</span>
-                </div>
-              </figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Toyota_Camry_Before.JPG" alt="Before Toyota Camry headlight restoration" loading="lazy" /><span class="photo-label before-label">Before</span></div></figure>
+              <figure class="result-photo"><div class="photo-wrap"><img src="Toyota_Camry_After.JPG" alt="After Toyota Camry headlight restoration" loading="lazy" /><span class="photo-label after-label">After</span></div></figure>
             </div>
             <p class="result-caption">Heavy oxidation removed, clarity restored, and finished with UV protection.</p>
           </article>
@@ -315,6 +293,66 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const serviceDetails = {
+      headlight: {
+        kicker: "Our specialty",
+        title: "Headlight Restoration",
+        text: "Our multi-stage process removes exterior oxidation, yellowing and failed surface material, then refines the lens and finishes it with UV protection.",
+        tags: ["Multi-stage restoration", "UV protection", "Mobile service"],
+        action: "See Headlight Pricing",
+        href: "#pricing-headlights"
+      },
+      interior: {
+        kicker: "Three package levels",
+        title: "Interior Detailing",
+        text: "Choose the level that fits your vehicle, from a solid interior refresh to disinfection or a deeper clean with stain treatment and pet-hair removal.",
+        tags: ["Starting at $150", "Disinfection available", "Deep clean option"],
+        action: "See Interior Packages",
+        href: "#pricing-interior"
+      },
+      bulb: {
+        kicker: "Convenient lighting service",
+        title: "Bulb Replacement",
+        text: "We replace accessible standard automotive bulbs and confirm the price after reviewing the vehicle and access required. LED replacements are not offered.",
+        tags: ["$15.99–$50", "Standard bulbs", "No LED replacements"],
+        action: "See Bulb Pricing",
+        href: "#pricing-bulbs"
+      },
+      mobile: {
+        kicker: "We come to you",
+        title: "Mobile Service",
+        text: "Headlight restoration, interior detailing and eligible bulb replacement can be performed at your home or workplace when location and conditions allow.",
+        tags: ["Mason", "Cincinnati", "Surrounding areas"],
+        action: "Text to Book",
+        href: "sms:+15135355151?body=Hi%2C%20I%27m%20interested%20in%20one%20of%20your%20mobile%20automotive%20services.%20Are%20you%20available%3F"
+      }
+    };
+
+    const serviceCards = Array.from(document.querySelectorAll(".service-card"));
+    const spotlightKicker = document.getElementById("spotlight-kicker");
+    const spotlightTitle = document.getElementById("spotlight-title");
+    const spotlightText = document.getElementById("spotlight-text");
+    const spotlightTags = document.getElementById("spotlight-tags");
+    const spotlightAction = document.getElementById("spotlight-action");
+
+    serviceCards.forEach(card => {
+      card.addEventListener("click", () => {
+        const detail = serviceDetails[card.dataset.service];
+        serviceCards.forEach(item => {
+          item.classList.toggle("active", item === card);
+          item.setAttribute("aria-pressed", item === card ? "true" : "false");
+        });
+        spotlightKicker.textContent = detail.kicker;
+        spotlightTitle.textContent = detail.title;
+        spotlightText.textContent = detail.text;
+        spotlightTags.innerHTML = detail.tags.map(tag => `<span>${tag}</span>`).join("");
+        spotlightAction.textContent = detail.action;
+        spotlightAction.href = detail.href;
+        document.getElementById("service-spotlight").classList.remove("spotlight-pop");
+        requestAnimationFrame(() => document.getElementById("service-spotlight").classList.add("spotlight-pop"));
+      });
+    });
 
     const carousel = document.getElementById("results-carousel");
     const slides = Array.from(carousel.querySelectorAll(".result-slide"));
