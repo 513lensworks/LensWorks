@@ -32,31 +32,56 @@
 @media(max-width:700px){.before-after-grid{grid-template-columns:1fr 1fr}.photo-wrap{aspect-ratio:4/5}.carousel-arrow{width:46px;height:46px;font-size:1.55rem}.carousel-prev{left:8px}.carousel-next{right:8px}.result-title{padding-right:62px}.result-caption{padding-left:18px;padding-right:18px}}
 @media(max-width:480px){.result-title h3{font-size:1.18rem}.result-location{font-size:.78rem}.photo-label{top:10px;left:10px;padding:5px 9px;font-size:.64rem}}
 
+/* Interactive service cards */
+.service-cards{align-items:stretch}
+.service-card{appearance:none;width:100%;color:var(--text);font:inherit;text-align:left;cursor:pointer;position:relative;overflow:hidden;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}
+.service-card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.72;transition:opacity .22s ease}
+.service-card-headlight::before{background:radial-gradient(circle at 85% 10%,rgba(255,51,69,.22),transparent 38%)}
+.service-card-interior::before{background:radial-gradient(circle at 85% 10%,rgba(255,255,255,.12),transparent 38%)}
+.service-card-bulb::before{background:radial-gradient(circle at 85% 10%,rgba(255,196,82,.16),transparent 38%)}
+.service-card-mobile::before{background:radial-gradient(circle at 85% 10%,rgba(120,150,255,.13),transparent 38%)}
+.service-card>*{position:relative;z-index:1}
+.service-card:hover,.service-card.active{transform:translateY(-6px);border-color:rgba(255,51,69,.65);box-shadow:0 20px 45px rgba(0,0,0,.35),0 0 0 1px rgba(255,51,69,.08) inset}
+.service-card.active::before,.service-card:hover::before{opacity:1}
+.service-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.service-card .icon{margin-bottom:0}
+.service-symbol{font-size:1.65rem;color:var(--red2);opacity:.9}
+.service-card h3{margin-bottom:12px}
+.service-card p{min-height:108px}
+.service-link{display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:#fff;font-size:.85rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.service-link b{color:var(--red2);font-size:1.1rem;transition:transform .2s ease}
+.service-card:hover .service-link b,.service-card.active .service-link b{transform:translateX(4px)}
+.service-spotlight{margin-top:22px;padding:30px 32px;border:1px solid rgba(255,51,69,.28);border-radius:20px;background:linear-gradient(135deg,rgba(225,29,46,.10),rgba(255,255,255,.03));display:grid;grid-template-columns:1fr auto;align-items:center;gap:28px;box-shadow:0 18px 45px rgba(0,0,0,.18)}
+.service-spotlight h3{font-size:2rem;margin-bottom:10px}
+.service-spotlight p:not(.eyebrow){color:#c6c6cb;max-width:760px;margin-bottom:16px}
+.spotlight-tags{display:flex;flex-wrap:wrap;gap:8px}
+.spotlight-tags span{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.035);color:#d7d7da;font-size:.78rem}
+.spotlight-pop{animation:spotlightPop .24s ease}
+@keyframes spotlightPop{0%{opacity:.55;transform:translateY(5px)}100%{opacity:1;transform:translateY(0)}}
+
+/* Categorized pricing */
+.pricing-section>.section-heading{margin-bottom:54px}
+.pricing-category{padding:34px 0 50px;border-top:1px solid var(--line)}
+.pricing-category:first-of-type{border-top:0;padding-top:0}
+.pricing-category-heading{display:grid;grid-template-columns:1fr minmax(260px,420px);gap:28px;align-items:end;margin-bottom:28px}
+.pricing-category-heading>div{display:flex;align-items:center;gap:16px}
+.pricing-category-heading h3{font-size:2rem;margin:0}
+.pricing-category-heading .eyebrow{margin-bottom:4px}
+.pricing-category-heading>p{color:var(--muted);margin:0;text-align:right}
+.category-number{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--red),#8f0d17);font-weight:900;box-shadow:0 10px 28px rgba(225,29,46,.18)}
+.price-grid-two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:830px}
+.price-grid-three{grid-template-columns:repeat(3,minmax(0,1fr));max-width:1100px}
+.price-grid-one{grid-template-columns:1fr;max-width:900px}
+.bulb-price-card{display:grid;grid-template-columns:1fr 260px;gap:24px;align-items:center;text-align:left}
+.bulb-price-card .button{width:100%}
+.bulb-price-card .price{font-size:3.6rem}
+
 /* Keep the complete header wordmark together on one line. */
-.brand{
-  flex-direction:row;
-  align-items:baseline;
-  white-space:nowrap;
-}
-
-.brand-513,
-.brand-name{
-  font-size:1.18rem;
-  font-weight:900;
-  letter-spacing:.02em;
-  line-height:1;
-}
-
-.brand-name{
-  margin-left:5px;
-  letter-spacing:.035em;
-}
+.brand{flex-direction:row;align-items:baseline;white-space:nowrap}.brand-513,.brand-name{font-size:1.18rem;font-weight:900;letter-spacing:.02em;line-height:1}.brand-name{margin-left:5px;letter-spacing:.035em}
 
 /* Local service landing pages */
-.local-hero{min-height:610px}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.faq-grid .card{min-height:0}
-.faq-grid .card h3{margin-bottom:10px}
-footer a{color:#d8d8dc;margin-top:4px}
-footer a:hover{color:var(--red2)}
-@media(max-width:700px){.faq-grid{grid-template-columns:1fr}}
+.local-hero{min-height:610px}.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.faq-grid .card{min-height:0}.faq-grid .card h3{margin-bottom:10px}footer a{color:#d8d8dc;margin-top:4px}footer a:hover{color:var(--red2)}
+
+@media(max-width:1000px){.price-grid-three{grid-template-columns:1fr 1fr}.pricing-category-heading{grid-template-columns:1fr}.pricing-category-heading>p{text-align:left}.bulb-price-card{grid-template-columns:1fr 220px}}
+@media(max-width:900px){.service-spotlight{grid-template-columns:1fr}.service-spotlight .button{justify-self:start}.service-card p{min-height:auto}}
+@media(max-width:700px){.faq-grid{grid-template-columns:1fr}.price-grid-two,.price-grid-three{grid-template-columns:1fr}.bulb-price-card{grid-template-columns:1fr}.pricing-category{padding-bottom:38px}.pricing-category-heading h3{font-size:1.6rem}.category-number{width:46px;height:46px}.service-spotlight{padding:24px}.service-spotlight h3{font-size:1.65rem}}
