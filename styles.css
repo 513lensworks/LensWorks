@@ -85,3 +85,14 @@
 @media(max-width:1000px){.price-grid-three{grid-template-columns:1fr 1fr}.pricing-category-heading{grid-template-columns:1fr}.pricing-category-heading>p{text-align:left}.bulb-price-card{grid-template-columns:1fr 220px}}
 @media(max-width:900px){.service-spotlight{grid-template-columns:1fr}.service-spotlight .button{justify-self:start}.service-card p{min-height:auto}}
 @media(max-width:700px){.faq-grid{grid-template-columns:1fr}.price-grid-two,.price-grid-three{grid-template-columns:1fr}.bulb-price-card{grid-template-columns:1fr}.pricing-category{padding-bottom:38px}.pricing-category-heading h3{font-size:1.6rem}.category-number{width:46px;height:46px}.service-spotlight{padding:24px}.service-spotlight h3{font-size:1.65rem}}
+
+/* Readability hardening for button-based service cards */
+button.service-card{background-color:#101012!important;color:#f5f5f7!important;border-color:rgba(255,255,255,.16)!important}
+button.service-card h3{color:#fff!important}
+button.service-card p{color:#c7c7cd!important}
+button.service-card .service-link{color:#fff!important}
+button.service-card .service-symbol{color:#ff3345!important}
+button.service-card.active,button.service-card:hover{border-color:rgba(255,51,69,.78)!important;background:linear-gradient(180deg,rgba(255,51,69,.09),rgba(255,255,255,.035))!important}
+.service-spotlight{color:#f5f5f7!important;background:linear-gradient(135deg,rgba(225,29,46,.16),rgba(255,255,255,.045))!important}
+.service-spotlight h3{color:#fff!important}
+.spotlight-tags span{display:inline-flex!important;color:#ededf0!important;background:#17171a!important;border:1px solid rgba(255,255,255,.18)!important;margin:0!important}
