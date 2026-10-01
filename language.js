@@ -77,3 +77,40 @@
   try { preferred = localStorage.getItem(langKey) === 'es' ? 'es' : 'en'; } catch (e) {}
   if (preferred === 'es') update('es');
 })();
+
+/* Google Analytics lead-action tracking */
+(() => {
+  const sendEvent = (eventName, anchor) => {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', eventName, {
+      link_text: (anchor.textContent || '').trim(),
+      link_url: anchor.href,
+      page_path: window.location.pathname
+    });
+  };
+
+  document.addEventListener('click', event => {
+    const anchor = event.target.closest('a[href]');
+    if (!anchor) return;
+
+    const href = anchor.getAttribute('href') || '';
+
+    if (href.startsWith('sms:')) {
+      sendEvent('text_to_book', anchor);
+      return;
+    }
+
+    if (href.startsWith('tel:')) {
+      sendEvent('call_click', anchor);
+      return;
+    }
+
+    if (
+      anchor.hostname === 'g.page' ||
+      anchor.href.includes('google.com/maps') ||
+      /\/review(?:$|[?#])/i.test(anchor.href)
+    ) {
+      sendEvent('review_click', anchor);
+    }
+  }, true);
+})();
