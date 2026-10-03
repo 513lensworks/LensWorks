@@ -13,13 +13,13 @@
     "513 LensWorks home": "Inicio de 513 LensWorks",
     "513 LENSWORKS LLC home": "Inicio de 513 LENSWORKS LLC",
     "Mobile headlight restoration, interior detailing and non-LED bulb replacement in Mason, Cincinnati and surrounding areas.": "Restauración de faros, limpieza interior y reemplazo de bombillas no LED a domicilio en Mason, Cincinnati y sus alrededores.",
-    "Mobile headlight restoration in Mason, Ohio for cloudy, yellowed and oxidized headlights.": "Restauración de faros opacos, amarillentos u oxidados a domicilio en Mason, Ohio."
+    "Mobile headlight restoration in Mason, Ohio for cloudy, yellowed and oxidized headlights.": "Restauración de faros opacos, amarillentos u oxidados a domicilio en Mason, Ohio.",
     "Privacy Policy": "Aviso de privacidad",
     "Mobile Automotive Services | 513 LENSWORKS LLC": "Servicios automotrices a domicilio | 513 LENSWORKS LLC",
     "Mobile Automotive Services in Mason, OH | 513 LENSWORKS LLC": "Servicios automotrices a domicilio en Mason, Ohio | 513 LENSWORKS LLC",
     "513 LENSWORKS LLC | Mobile Automotive Services in Mason, OH": "513 LENSWORKS LLC | Servicios automotrices a domicilio en Mason, Ohio",
     "513 LENSWORKS LLC provides mobile headlight restoration, interior detailing and non-LED bulb replacement in Mason, Ohio. Call or text 513-406-6574.": "513 LENSWORKS LLC ofrece restauración de faros, limpieza interior y reemplazo de bombillas no LED a domicilio en Mason, Ohio. Llama o envía un mensaje al 513-406-6574.",
-    "Mobile headlight restoration, interior detailing and non-LED bulb replacement in Mason, Ohio.": "Restauración de faros, limpieza interior y reemplazo de bombillas no LED a domicilio en Mason, Ohio.",,
+    "Mobile headlight restoration, interior detailing and non-LED bulb replacement in Mason, Ohio.": "Restauración de faros, limpieza interior y reemplazo de bombillas no LED a domicilio en Mason, Ohio.",
   });
   const reverse = Object.fromEntries(Object.entries(translations).map(([en, es]) => [es, en]));
   const translate = (value, spanish) => {
