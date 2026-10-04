@@ -1,0 +1,142 @@
+name: Build Google Business Assets
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-google-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Pillow
+        run: pip install pillow
+
+      - name: Build exact-photo before/after assets
+        shell: bash
+        run: |
+          python - <<'PY'
+          from PIL import Image, ImageOps, ImageDraw, ImageFont
+          from pathlib import Path
+
+          OUT = Path("google-business-assets")
+          OUT.mkdir(exist_ok=True)
+
+          pairs = [
+              ("Lexus", "Lexus_Before.JPG", "Lexus_After.JPG", "lexus-before-after.png"),
+              ("Ford", "Ford_Before.JPG", "Ford_After.JPG", "ford-before-after.png"),
+              ("Toyota Camry", "Toyota_Camry_Before.JPG", "Toyota_Camry_After.JPG", "toyota-camry-before-after.png"),
+              ("Audi TT", "Audi_TT_Before.jpeg", "Audi_TT_After.jpeg", "audi-tt-before-after.png"),
+              ("Land Cruiser", "2005-landcruiser-before.jpeg", "2005-landcruiser-after.jpeg", "land-cruiser-before-after.png"),
+          ]
+
+          W, H = 1600, 1000
+          HEADER_H = 100
+          FOOTER_H = 100
+          CONTENT_H = H - HEADER_H - FOOTER_H
+          HALF_W = W // 2
+          BLACK = (8, 8, 10)
+          RED = (230, 20, 35)
+          WHITE = (245, 245, 245)
+
+          def font(size):
+              candidates = [
+                  "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+                  "/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf",
+              ]
+              for path in candidates:
+                  if Path(path).exists():
+                      return ImageFont.truetype(path, size)
+              return ImageFont.load_default()
+
+          label_font = font(54)
+          vehicle_font = font(26)
+
+          logo = Image.open("513-lensworks-logo.png").convert("RGBA")
+          logo.thumbnail((360, 78), Image.Resampling.LANCZOS)
+
+          def contain_exact(img, box_w, box_h):
+              # Preserve the complete original photo; only resize, never synthesize or retouch.
+              img = img.convert("RGB")
+              fitted = ImageOps.contain(img, (box_w, box_h), method=Image.Resampling.LANCZOS)
+              panel = Image.new("RGB", (box_w, box_h), BLACK)
+              x = (box_w - fitted.width) // 2
+              y = (box_h - fitted.height) // 2
+              panel.paste(fitted, (x, y))
+              return panel
+
+          for vehicle, before_path, after_path, out_name in pairs:
+              before = Image.open(before_path)
+              after = Image.open(after_path)
+
+              canvas = Image.new("RGB", (W, H), BLACK)
+              draw = ImageDraw.Draw(canvas)
+
+              left = contain_exact(before, HALF_W, CONTENT_H)
+              right = contain_exact(after, HALF_W, CONTENT_H)
+              canvas.paste(left, (0, HEADER_H))
+              canvas.paste(right, (HALF_W, HEADER_H))
+
+              draw.rectangle((0, 0, W, HEADER_H), fill=BLACK)
+              draw.rectangle((0, H-FOOTER_H, W, H), fill=BLACK)
+              draw.rectangle((HALF_W-4, HEADER_H, HALF_W+4, H-FOOTER_H), fill=RED)
+              draw.rectangle((0, HEADER_H-5, W, HEADER_H), fill=RED)
+              draw.rectangle((0, H-FOOTER_H, W, H-FOOTER_H+5), fill=RED)
+
+              def center_text(text, cx, cy, fnt, fill):
+                  bbox = draw.textbbox((0,0), text, font=fnt)
+                  tw = bbox[2] - bbox[0]
+                  th = bbox[3] - bbox[1]
+                  draw.text((cx - tw/2, cy - th/2), text, font=fnt, fill=fill)
+
+              center_text("BEFORE", HALF_W/2, HEADER_H/2-4, label_font, WHITE)
+              center_text("AFTER", HALF_W + HALF_W/2, HEADER_H/2-4, label_font, RED)
+
+              # Exact existing logo from the website, composited without modification.
+              logo_x = (W - logo.width) // 2
+              logo_y = H - FOOTER_H + (FOOTER_H - logo.height)//2
+              canvas_rgba = canvas.convert("RGBA")
+              canvas_rgba.alpha_composite(logo, (logo_x, logo_y))
+              canvas = canvas_rgba.convert("RGB")
+              draw = ImageDraw.Draw(canvas)
+
+              # Small vehicle label for organization; does not cover the photos.
+              bbox = draw.textbbox((0,0), vehicle, font=vehicle_font)
+              tw = bbox[2]-bbox[0]
+              draw.text((W-24-tw, H-34), vehicle, font=vehicle_font, fill=(170,170,170))
+
+              canvas.save(OUT/out_name, "PNG", optimize=True)
+
+          # Also make a ZIP-friendly manifest.
+          (OUT/"README.txt").write_text(
+              "513 LensWorks Google Business assets. Each PNG uses the exact original before/after photos already stored in the website repository. The photos are only resized and placed side-by-side; they are not AI-generated, retouched, or replaced.\n"
+          )
+          PY
+
+      - name: Upload asset bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: google-business-assets
+          path: google-business-assets/
+
+      - name: Commit generated assets to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add google-business-assets/
+          if git diff --cached --quiet; then
+            echo "No asset changes to commit."
+          else
+            git commit -m "Add Google Business before-after assets"
+            git push
+          fi
