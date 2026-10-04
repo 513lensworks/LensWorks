@@ -1,0 +1,1 @@
+513 LensWorks Google Business assets. Each PNG uses the exact original before/after photos already stored in the website repository. The photos are only resized and placed side-by-side; they are not AI-generated, retouched, or replaced.
