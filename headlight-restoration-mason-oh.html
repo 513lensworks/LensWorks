@@ -3,6 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- OpenAI Ads Measurement Pixel -->
+  <script>
+    !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=true;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
+    oaiq("init",{pixelId:"7p5jpv2P6VPayss4nSocvy",debug:true});
+    document.addEventListener("click",function(event){
+      var link=event.target.closest('a[href^="tel:"],a[href^="sms:"]');
+      if(!link)return;
+      oaiq("measure","lead_created",{type:"customer_action"},{event_id:"contact_"+Date.now()+"_"+Math.random().toString(36).slice(2,10)});
+    });
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18390395906"></script>
   <script>
