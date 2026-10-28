@@ -3,8 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- OpenAI Ads Measurement Pixel -->
+  <script>
+    !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=true;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
+    oaiq("init",{pixelId:"7p5jpv2P6VPayss4nSocvy",debug:true});
+    document.addEventListener("click",function(event){
+      var link=event.target.closest('a[href^="tel:"],a[href^="sms:"]');
+      if(!link)return;
+      oaiq("measure","lead_created",{type:"customer_action"},{event_id:"contact_"+Date.now()+"_"+Math.random().toString(36).slice(2,10)});
+    });
+  </script>
   <title>Privacy Policy | 513 LENSWORKS LLC</title>
-  <meta name="description" content="Learn how 513 LENSWORKS LLC's website uses Google Analytics and Google Ads measurement, and how to manage your privacy choices." />
+  <meta name="description" content="Learn how 513 LENSWORKS LLC's website uses Google Analytics, Google Ads, and OpenAI Ads measurement, and how to manage your privacy choices." />
   <meta name="theme-color" content="#050505" />
   <link rel="canonical" href="https://513lensworks.com/privacy-policy.html" />
   <link rel="icon" href="513-lensworks-logo.png" />
@@ -32,7 +42,7 @@
         </article>
         <article class="card">
           <h2>Analytics and advertising</h2>
-          <p>Our public marketing pages use Google Analytics and Google Ads tags to measure website activity and interactions with contact links. Google may receive information such as page visits, link interactions, browser and device details, and approximate location. Depending on our Google Ads settings and enabled features, Google may also use cookies or similar identifiers to measure ads or personalize advertising, including showing ads based on previous visits to this website.</p>
+          <p>Our public marketing pages use Google Analytics, Google Ads, and OpenAI Ads measurement tags to measure website activity and interactions with contact links. These services may receive information such as page visits, contact-link clicks, browser and device details, and approximate location. OpenAI’s measurement pixel may use first-party cookies to support ad attribution. Depending on our Google Ads settings and enabled features, Google may also use cookies or similar identifiers to measure ads or personalize advertising, including showing ads based on previous visits to this website.</p>
           <p>Google explains its data practices in its <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and its <a href="https://support.google.com/analytics/answer/7318509?hl=en" target="_blank" rel="noopener noreferrer">Analytics privacy disclosures</a>.</p>
         </article>
         <article class="card">
@@ -63,7 +73,7 @@
         </article>
         <article class="card">
           <h2>Análisis y publicidad</h2>
-          <p>Nuestras páginas públicas de información usan etiquetas de Google Analytics y Google Ads para medir la actividad del sitio y las interacciones con los enlaces de contacto. Google puede recibir información como visitas a páginas, interacciones con enlaces, detalles del navegador y dispositivo, y ubicación aproximada. Según la configuración de Google Ads y las funciones habilitadas, Google también puede usar cookies u otros identificadores similares para medir anuncios o personalizar la publicidad, incluso para mostrar anuncios basados en visitas anteriores a este sitio.</p>
+          <p>Nuestras páginas públicas de información usan etiquetas de Google Analytics, Google Ads y OpenAI Ads para medir la actividad del sitio y las interacciones con los enlaces de contacto. Estos servicios pueden recibir información como visitas a páginas, clics en enlaces de contacto, detalles del navegador y dispositivo, y ubicación aproximada. El píxel de medición de OpenAI puede usar cookies propias para ayudar con la atribución de anuncios. Según la configuración de Google Ads y las funciones habilitadas, Google también puede usar cookies u otros identificadores similares para medir anuncios o personalizar la publicidad, incluso para mostrar anuncios basados en visitas anteriores a este sitio.</p>
           <p>Google explica sus prácticas en su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad</a> y en sus <a href="https://support.google.com/analytics/answer/7318509?hl=es" target="_blank" rel="noopener noreferrer">avisos de privacidad de Analytics</a>.</p>
         </article>
         <article class="card">
