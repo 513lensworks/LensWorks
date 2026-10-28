@@ -10,7 +10,11 @@
     document.addEventListener("click",function(event){
       var link=event.target.closest('a[href^="tel:"],a[href^="sms:"]');
       if(!link)return;
-      oaiq("measure","lead_created",{type:"customer_action"},{event_id:"contact_"+Date.now()+"_"+Math.random().toString(36).slice(2,10)});
+      oaiq(
+        "measure",
+        "lead_created",
+        { type: "customer_action" }
+      );
     });
   </script>
   <!-- Google tag (gtag.js) -->
